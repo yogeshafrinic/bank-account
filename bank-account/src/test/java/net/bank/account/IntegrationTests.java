@@ -40,9 +40,10 @@ import java.net.URISyntaxException;
  * 1. HTTPS
  * 2. Local "Docker registry"
  * 3. Use WebTestClient instead of RestTemplate (can be done only with WebFLux)
- * 4. Use git-commit-id-plugin / Maven
+ * 4. DONE - Use git-commit-id-plugin / Maven
  * 5. Use Ignite / Redis / Hazelcast
  * 6. DONE - Fix HATEOAS and ZUUL issue
+ * 7. Add AUDIT trail on tables, logging action per user
  */
 @Slf4j
 public class IntegrationTests {

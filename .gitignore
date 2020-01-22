@@ -1,3 +1,7 @@
+# Specific folders
+Kubernetes/
+central-config/
+
 # Compiled class file
 *.class
 

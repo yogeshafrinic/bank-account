@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+name: bank-account
+spec:
+containers:
+    - name: bank-account
+image: afrinic/bank-account

@@ -1,0 +1,24 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+    registerWithEureka: true
+    fetchRegistry: true
+
+zuul:
+  debug:
+    request: true
+  ribbon:
+    eager-load:
+      enabled: true
+  routes:
+    bank-account:
+      path: /bank-account/**
+      serviceId: bank-account
+
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 50000
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 10000

@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: bank-account
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+logging:
+  level:
+    root: WARN
+    com.netflix.config.sources.URLConfigurationSource: ERROR

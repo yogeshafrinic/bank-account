@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: discovery
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+server:
+  port: 8761
+logging:
+  level:
+    root: WARN
+    com.netflix.config.sources.URLConfigurationSource: ERROR

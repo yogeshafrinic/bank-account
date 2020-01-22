@@ -1,0 +1,35 @@
+#version: "3.7"
+version: "2.0"
+services:
+
+  container.bank-account:
+    image: ychadee/bank-account:latest
+    ports:
+      - "8080"
+    environment:
+      DB_REFRESH: "create"
+      MONGODB_URI: "mongodb://container.mongodb:27017/test"
+      DISCOVERY_URI: "http://container.discovery:8761/eureka"
+    depends_on:
+      - container.mongodb
+      - container.discovery
+
+  container.mongodb:
+    image: mongo:4.0
+    ports:
+      - "27017"
+
+  container.discovery:
+    image: ychadee/discovery
+    ports:
+      - "8761:8761"
+
+  container.gateway:
+    image: ychadee/gateway
+    ports:
+      - "8080:8762"
+    environment:
+      DISCOVERY_URI: "http://container.discovery:8761/eureka"
+    depends_on:
+      - container.discovery
+      - container.bank-account
